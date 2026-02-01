@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практическая работа №1 — HTML5 и CSS3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <section class="hero" aria-label="Практическая работа">
+          <div class="hero__inner">
+            <div class="meta">
+              <div class="brand" aria-label="Идентификатор работы">
+                <div class="mark" aria-hidden="true"></div>
+                <div class="brand__text">
+                  <p class="brand__title">
+                    Практическая работа №1 • HTML5 и CSS3
+                  </p>
+                  <p class="brand__subtitle">СПО • Семантика</p>
+                </div>
+              </div>
+            </div>
+
+            <nav class="nav" aria-label="Оглавление">
+              <a href="#task">Задание</a>
+              <a href="#req">Требования</a>
+              <a href="#templates">Шаблоны</a>
+              <a href="#bonus">Дополнительно</a>
+            </nav>
+
+            <h1>Разработка мини-лендинга мероприятия и формы заявки</h1>
+            <p class="lead">
+              Цель практической работы — закрепить навыки построения корректной
+              структуры HTML-документа, использования семантических элементов и
+              оформления страницы средствами CSS без применения JavaScript.
+            </p>
+
+            <div class="pillrow" aria-label="Ключевые требования">
+              <span class="pill"
+                ><span class="dot" aria-hidden="true"></span>2 файла: index.html
+                и style.css</span
+              >
+              <span class="pill">Навигация-якоря по разделам</span>
+              <span class="pill">Токены :root + clamp() + focus-visible</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <div class="container layout">
+        <section id="task" class="card">
+          <h2>1) Задание</h2>
+          <p class="muted">
+            Требуется создать лендинг вымышленного события (например, «WebFest
+            2026»). Страница должна содержать шапку, меню навигации, основные
+            секции (о событии, программа, спикеры, регистрация) и подвал.
+          </p>
+
+          <h3>Структура страницы (обязательно)</h3>
+          <ol>
+            <li>
+              <strong>Header</strong>: название события, дата, краткое описание,
+              кнопка-ссылка на раздел регистрации.
+            </li>
+            <li>
+              <strong>Nav</strong>: меню-якоря на секции (О событии, Программа,
+              Спикеры, Регистрация).
+            </li>
+            <li>
+              <strong>Main</strong> (не менее 4 секций):
+              <ul>
+                <li>
+                  <strong>О событии</strong>: 2–3 абзаца и список «для кого».
+                </li>
+                <li>
+                  <strong>Программа</strong>: 3–5 пунктов (допускается
+                  оформление в виде карточек).
+                </li>
+                <li>
+                  <strong>Спикеры</strong>: 3 карточки (ФИО, роль, краткое
+                  описание). Фото допускается заменить декоративным блоком.
+                </li>
+                <li>
+                  <strong>Регистрация</strong>: форма с полями имя, email,
+                  роль/статус (select) и согласие (checkbox).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Footer</strong>: год, автор, контактная информация
+              (допускаются заглушки).
+            </li>
+          </ol>
+
+          <div class="callout callout--accent small">
+            <strong>Методическое требование:</strong> оформление должно быть
+            системным. Используйте единые отступы, единый стиль кнопок,
+            типографику и повторяемые компоненты (карточки/поля формы). Это
+            является признаком качественной вёрстки.
+          </div>
+        </section>
+
+        <aside id="req" class="card">
+          <h2>2) Требования к выполнению</h2>
+          <ul>
+            <li>
+              Файлы проекта: <code>index.html</code> и <code>style.css</code>.
+            </li>
+            <li>
+              В <code>&lt;head&gt;</code>: <code>charset</code>,
+              <code>viewport</code>, <code>title</code>, подключение CSS через
+              <code>&lt;link&gt;</code>.
+            </li>
+            <li>
+              Семантические теги: <code>header</code>, <code>nav</code>,
+              <code>main</code>, <code>section</code>, <code>footer</code>.
+            </li>
+            <li>
+              Навигация по секциям — через <code>id</code> и якорные ссылки.
+            </li>
+            <li>
+              CSS: переменные в <code>:root</code> (цвета/отступы/радиусы) и
+              применение <code>clamp()</code> минимум 1 раз.
+            </li>
+            <li>
+              Доступность: стили <code>:focus-visible</code> для ссылок и
+              кнопок.
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="container">
+        <section id="templates" class="card" style="margin-top: 14px">
+          <h2>4) Шаблоны файлов</h2>
+          <p class="muted small">
+            Шаблоны предназначены для старта. Допускается адаптация под ваш
+            вариант, при сохранении требований.
+          </p>
+
+          <div class="two" aria-label="Шаблоны кода">
+            <div class="callout">
+              <h3 style="margin: 0 0 8px">index.html (скелет)</h3>
+              <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ru&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;WebFest 2026&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class=&quot;site-header&quot;&gt;...&lt;/header&gt;
+
+  &lt;nav class=&quot;site-nav&quot; aria-label=&quot;Навигация&quot;&gt;
+    &lt;a href=&quot;#about&quot;&gt;О событии&lt;/a&gt;
+    &lt;a href=&quot;#agenda&quot;&gt;Программа&lt;/a&gt;
+    &lt;a href=&quot;#speakers&quot;&gt;Спикеры&lt;/a&gt;
+    &lt;a href=&quot;#reg&quot;&gt;Регистрация&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;main&gt;
+    &lt;section id=&quot;about&quot;&gt;...&lt;/section&gt;
+    &lt;section id=&quot;agenda&quot;&gt;...&lt;/section&gt;
+    &lt;section id=&quot;speakers&quot;&gt;...&lt;/section&gt;
+    &lt;section id=&quot;reg&quot;&gt;...&lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;© 2026 • Автор&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <div class="callout">
+              <h3 style="margin: 0 0 8px">
+                style.css (токены + fluid + доступность)
+              </h3>
+              <pre><code>:root{
+  --bg:#0b1220;
+  --surface:#0f172a;
+  --text:#e5e7eb;
+  --muted:#a1a1aa;
+  --border:#24324a;
+  --accent:#7c3aed;
+  --radius:16px;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6;
+  color:var(--text);
+  background:var(--bg);
+}
+
+.h1{
+  margin:0 0 8px;
+  font-size:clamp(26px, 3vw, 42px);
+  letter-spacing:-.02em;
+}
+
+a:focus-visible, button:focus-visible{
+  outline:4px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  outline-offset:2px;
+}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="bonus" class="card" style="margin-top: 14px">
+          <h2>5) Дополнительно (по желанию)</h2>
+          <div class="callout small">
+            <ul>
+              <li>
+                Реализовать светлую/тёмную тему через
+                <code>prefers-color-scheme</code>.
+              </li>
+              <li>
+                Сделать сетку «Спикеры» через CSS Grid с
+                <code>repeat(auto-fit, minmax(...))</code>.
+              </li>
+              <li>
+                Добавить проверку удобства: читабельные отступы, аккуратные
+                состояния ссылок и кнопок.
+              </li>
+            </ul>
+          </div>
+          <p class="muted small" style="margin: 10px 0 0">
+            Примечание: оценка качества вёрстки определяется не «яркостью», а
+            логикой структуры и системностью CSS.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="small">
+          © 2026. Практическая работа №1 по дисциплине «HTML5 и CSS3».
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
