@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практическое занятие — Структура HTML-документа</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <section class="hero" aria-label="Практическое занятие">
+          <div class="hero__inner">
+            <div class="meta">
+              <span class="badge"
+                ><span class="dot" aria-hidden="true"></span>СПО • Практическое
+                занятие • 2 часа</span
+              >
+              <span class="badge">Тема: Структура HTML-документа</span>
+            </div>
+
+            <h1>Практическая работа: «Структура HTML-документа (HTML5)»</h1>
+            <p class="lead">
+              В ходе занятия необходимо создать корректный HTML-документ по
+              стандарту HTML5, соблюдая обязательные элементы структуры и
+              правила вложенности. CSS в данной работе не используются: цель —
+              отработать именно основу документа.
+            </p>
+
+            <nav class="toc" aria-label="Навигация по странице">
+              <a href="#goal">Цель</a>
+              <a href="#skills">Формируемые умения</a>
+              <a href="#task">Задание</a>
+              <a href="#requirements">Требования</a>
+              <a href="#template">Шаблон</a>
+              <a href="#steps">Порядок выполнения</a>
+              <a href="#questions">Контрольные вопросы</a>
+            </nav>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <div class="container layout">
+        <section class="card" id="goal">
+          <h2>1) Цель занятия</h2>
+          <p class="muted">
+            Закрепить навыки создания корректной структуры HTML-документа,
+            отработать обязательные элементы HTML5 и правила вложенности.
+          </p>
+        </section>
+
+        <section class="card" id="skills" style="margin-bottom: 14px">
+          <h2>2) Формируемые умения</h2>
+          <ul>
+            <li>создание HTML-документа по стандарту HTML5;</li>
+            <li>
+              оформление секций <code>&lt;head&gt;</code> и
+              <code>&lt;body&gt;</code> в соответствии с требованиями;
+            </li>
+            <li>
+              использование обязательных структурных блоков
+              (<code>header</code>, <code>nav</code>, <code>main</code>,
+              <code>section</code>, <code>footer</code>);
+            </li>
+            <li>соблюдение правил вложенности и корректного закрытия тегов.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="container">
+        <section class="card" id="task">
+          <h2>3) Задание</h2>
+          <p>
+            Создать файл <code>index.html</code> с названием «Учебная
+            веб-страница». Документ должен содержать корректную структуру HTML5
+            и четыре основные области страницы: шапку, навигацию, основной
+            контент и подвал.
+          </p>
+
+          <div class="callout small">
+            <strong>Условие:</strong> в этой работе запрещено использовать CSS и
+            JavaScript. Проверяется именно структура документа и корректность
+            разметки.
+          </div>
+        </section>
+
+        <section class="card" id="requirements" style="margin-top: 14px">
+          <h2>4) Требования к структуре</h2>
+          <ol>
+            <li>
+              В начале документа должна быть декларация:
+              <code>&lt;!DOCTYPE html&gt;</code>.
+            </li>
+            <li>
+              Корневой тег <code>&lt;html&gt;</code> должен содержать атрибут
+              <code>lang="ru"</code>.
+            </li>
+            <li>
+              В секции <code>&lt;head&gt;</code> разместить:
+              <ul>
+                <li><code>&lt;meta charset="UTF-8"&gt;</code></li>
+                <li>
+                  <code
+                    >&lt;meta name="viewport" content="width=device-width,
+                    initial-scale=1.0"&gt;</code
+                  >
+                </li>
+                <li>
+                  <code>&lt;title&gt;</code> с осмысленным названием страницы
+                </li>
+              </ul>
+            </li>
+            <li>
+              В секции <code>&lt;body&gt;</code> должны присутствовать:
+              <ul>
+                <li>
+                  <code>&lt;header&gt;</code> с заголовком страницы
+                  (<code>&lt;h1&gt;</code>)
+                </li>
+                <li><code>&lt;nav&gt;</code> с якорными ссылками</li>
+                <li><code>&lt;main&gt;</code>, содержащий основной контент</li>
+                <li><code>&lt;footer&gt;</code> с годом и ФИО обучающегося</li>
+              </ul>
+            </li>
+            <li>
+              Внутри <code>&lt;main&gt;</code> должно быть
+              <strong>не менее двух</strong> секций
+              <code>&lt;section&gt;</code> с заголовками
+              (<code>&lt;h2&gt;</code>).
+            </li>
+          </ol>
+        </section>
+
+        <section class="card" id="template" style="margin-top: 14px">
+          <h2>5) Шаблон</h2>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Учебная веб-страница&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Моя первая HTML-страница&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;a href="#section1"&gt;Раздел 1&lt;/a&gt;
+    &lt;a href="#section2"&gt;Раздел 2&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;main&gt;
+    &lt;section id="section1"&gt;
+      &lt;h2&gt;Первый раздел&lt;/h2&gt;
+      &lt;p&gt;Текст первого раздела.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="section2"&gt;
+      &lt;h2&gt;Второй раздел&lt;/h2&gt;
+      &lt;p&gt;Текст второго раздела.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2026. ФИО обучающегося&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <div class="callout small">
+            <strong>Требование к корректности:</strong> все теги должны быть
+            правильно вложены и закрыты. Не допускается размещение элементов вне
+            секций <code>&lt;head&gt;</code> и <code>&lt;body&gt;</code>.
+          </div>
+        </section>
+
+        <section class="card" id="steps" style="margin-top: 14px">
+          <h2>6) Порядок выполнения работы</h2>
+          <ol>
+            <li>
+              Создать папку проекта (например, <code>practice-structure</code>).
+            </li>
+            <li>Создать файл <code>index.html</code>.</li>
+            <li>
+              Добавить обязательную структуру HTML5 (DOCTYPE, html, head, body).
+            </li>
+            <li>
+              Заполнить <code>&lt;head&gt;</code> метатегами и заголовком
+              страницы.
+            </li>
+            <li>
+              Добавить в <code>&lt;body&gt;</code> блоки <code>header</code>,
+              <code>nav</code>, <code>main</code>, <code>footer</code>.
+            </li>
+            <li>
+              Создать минимум две секции <code>&lt;section&gt;</code> в составе
+              <code>&lt;main&gt;</code>.
+            </li>
+            <li>
+              Открыть файл в браузере, проверить корректность отображения.
+            </li>
+            <li>
+              Проверить разметку на валидность (по возможности — через валидатор
+              HTML).
+            </li>
+          </ol>
+        </section>
+        <section class="card" id="questions" style="margin-top: 14px">
+          <h2>7) Контрольные вопросы</h2>
+          <ol>
+            <li>
+              Для чего используется декларация
+              <code>&lt;!DOCTYPE html&gt;</code>?
+            </li>
+            <li>Каково назначение секции <code>&lt;head&gt;</code>?</li>
+            <li>
+              Какие элементы являются обязательными в структуре HTML5-документа?
+            </li>
+            <li>
+              Почему тег <code>&lt;main&gt;</code> должен быть уникальным?
+            </li>
+            <li>Какие ошибки вложенности тегов считаются критичными?</li>
+          </ol>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="small">
+          © 2026. Дисциплина «HTML5 и CSS3». Практическое занятие: Структура
+          HTML-документа.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практическое занятие — Резиновая вёрстка</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#content">Перейти к содержимому</a>
+
+    <header class="page-header">
+      <div class="container">
+        <section class="hero" aria-label="Практическое занятие">
+          <div class="hero__meta">
+            <span class="badge">СПО • Практическое занятие • 2 часа</span>
+            <span class="badge badge--accent"
+              >Тема: Резиновая (гибкая) вёрстка</span
+            >
+          </div>
+
+          <h1 class="hero__title">
+            Практическая работа: «Резиновая вёрстка (Fluid Layout)»
+          </h1>
+          <p class="hero__lead">
+            Цель занятия — отработать построение гибкого макета, который
+            корректно изменяется при изменении ширины окна браузера. Работа
+            выполняется на HTML + CSS.
+          </p>
+
+          <nav class="toc" aria-label="Навигация по странице">
+            <a class="toc__link" href="#goal">Цель</a>
+            <a class="toc__link" href="#result">Ожидаемый результат</a>
+            <a class="toc__link" href="#requirements">Требования</a>
+            <a class="toc__link" href="#task">Задание</a>
+            <a class="toc__link" href="#steps">Порядок выполнения</a>
+            <a class="toc__link" href="#starter">Шаблоны</a>
+            <a class="toc__link" href="#check">Самопроверка</a>
+          </nav>
+
+          <div class="hero__pills" aria-label="Ключевые требования">
+            <span class="pill"
+              ><span class="dot" aria-hidden="true"></span>2 файла: index.html +
+              style.css</span
+            >
+            <span class="pill">Контейнер: max-width + резиновая ширина</span>
+            <span class="pill">Компоновка: Flexbox и/или Grid</span>
+            <span class="pill">Отн. единицы: %, rem, fr, clamp()</span>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main class="page-main" id="content">
+      <div class="container stack">
+        <section class="card" id="goal">
+          <h2 class="card__title">1) Цель занятия</h2>
+          <p class="muted">
+            Закрепить навыки построения резиновой вёрстки: использование
+            относительных единиц измерения, гибкого контейнера, а также
+            технологий Flexbox и/или CSS Grid.
+          </p>
+        </section>
+
+        <section class="card" id="result">
+          <h2 class="card__title">2) Ожидаемый результат</h2>
+          <p>
+            По итогам выполнения работы должен получиться макет «мини-лендинга»
+            (учебная страница), который корректно отображается на ширине от
+            <strong>360px</strong> до <strong>1440px</strong>
+            без горизонтальной прокрутки.
+          </p>
+          <ul>
+            <li>
+              страница содержит шапку, навигацию, основной контент и подвал;
+            </li>
+            <li>
+              основной блок — <strong>две колонки</strong> (контент + боковая
+              панель), которые «тянутся» по ширине;
+            </li>
+            <li>
+              карточки «Направления/Преимущества» выводятся в сетке, которая
+              перестраивается автоматически;
+            </li>
+            <li>на узких экранах (360–480px) две колонки переходят в одну.</li>
+          </ul>
+        </section>
+
+        <section class="card" id="requirements">
+          <h2 class="card__title">3) Требования к выполнению</h2>
+          <ul>
+            <li>
+              Файлы проекта: <code>index.html</code> и <code>style.css</code>.
+            </li>
+            <li>
+              Запрещено задавать ширину всей страницы фиксированно (например,
+              <code>width: 1200px</code> для контейнера сайта).
+            </li>
+            <li>
+              Контейнер страницы выполнить по схеме: <code>max-width</code> +
+              резиновая ширина (<code>width: 100%</code> / <code>min()</code>).
+            </li>
+            <li>
+              Использовать относительные единицы: <code>%</code>,
+              <code>rem</code>, <code>fr</code> и (рекомендуется)
+              <code>clamp()</code>.
+            </li>
+            <li>
+              Основную компоновку выполнить с помощью
+              <strong>Flexbox</strong> или <strong>CSS Grid</strong>.
+            </li>
+            <li>
+              Горизонтальная прокрутка недопустима. Элементы не должны
+              «выползать» вправо.
+            </li>
+          </ul>
+          <div class="callout">
+            <strong>Методический акцент:</strong> проверяется корректность
+            поведения макета при изменении ширины окна браузера. Визуальная
+            «красота» вторична по сравнению с правильной компоновкой и
+            устойчивостью верстки.
+          </div>
+        </section>
+
+        <section class="card" id="task">
+          <h2 class="card__title">4) Задание</h2>
+          <p>
+            Разработайте учебную страницу «Студенческий IT-клуб» (название
+            допускается заменить). Макет должен включать элементы, указанные
+            ниже.
+          </p>
+          <ol>
+            <li>
+              <strong>Header</strong>: название, краткое описание, кнопка-ссылка
+              на раздел «Вступить».
+            </li>
+            <li><strong>Nav</strong>: якорные ссылки на блоки страницы.</li>
+            <li>
+              <strong>Main</strong>:
+              <ul>
+                <li><strong>Двухколоночный блок</strong> (контент + aside):</li>
+                <li>
+                  Сетка карточек «Направления/Преимущества»: минимум 6 карточек,
+                  гибкая сетка.
+                </li>
+                <li>
+                  Форма «Вступить»: имя, email, роль (select), согласие
+                  (checkbox).
+                </li>
+              </ul>
+            </li>
+            <li><strong>Footer</strong>: год и автор.</li>
+          </ol>
+
+          <div class="callout callout--accent">
+            <strong>Обязательное условие:</strong> при ширине 360–480px
+            двухколоночный блок должен становиться одноколоночным (контент
+            сверху, aside снизу). Разрешается использовать 1–2 медиазапроса.
+          </div>
+        </section>
+
+        <section class="card" id="steps">
+          <h2 class="card__title">5) Порядок выполнения</h2>
+          <ol>
+            <li>
+              Создайте папку проекта (например, <code>practice-fluid</code>).
+            </li>
+            <li>
+              Создайте файлы <code>index.html</code> и <code>style.css</code>,
+              подключите CSS.
+            </li>
+            <li>
+              Соберите структуру HTML (header/nav/main/section/aside/footer).
+            </li>
+            <li>
+              Настройте контейнер и базовую типографику (rem, line-height).
+            </li>
+            <li>Сделайте двухколоночную компоновку через Flexbox/Grid.</li>
+            <li>
+              Соберите сетку карточек через Grid (auto-fit/minmax) или Flexbox.
+            </li>
+            <li>Проверьте «резиновость»: 360px → 768px → 1024px → 1440px.</li>
+            <li>
+              Устраните переполнения (длинные строки, padding, изображения,
+              box-sizing).
+            </li>
+          </ol>
+        </section>
+
+        <section class="card" id="starter">
+          <h2 class="card__title">6) Шаблоны</h2>
+
+          <h3 class="card__subtitle">6.1 index.html</h3>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ru&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+  &lt;title&gt;Студенческий IT-клуб&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class=&quot;site-header&quot;&gt;...&lt;/header&gt;
+  &lt;nav class=&quot;site-nav&quot;&gt;...&lt;/nav&gt;
+
+  &lt;main class=&quot;main&quot;&gt;
+    &lt;section id=&quot;about&quot; class=&quot;panel&quot;&gt;
+      &lt;div class=&quot;two-col&quot;&gt;
+        &lt;div class=&quot;content&quot;&gt;...&lt;/div&gt;
+        &lt;aside class=&quot;aside&quot;&gt;...&lt;/aside&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;areas&quot; class=&quot;panel&quot;&gt;
+      &lt;div class=&quot;cards&quot;&gt;
+        &lt;article class=&quot;card&quot;&gt;...&lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;join&quot; class=&quot;panel&quot;&gt;
+      &lt;form class=&quot;form&quot;&gt;...&lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer class=&quot;site-footer&quot;&gt;© 2026 • Автор&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <h3 class="card__subtitle">6.2 style.css</h3>
+          <pre><code>:root{
+  --container: 1100px;
+  --pad: 16px;
+  --gap: 14px;
+}
+
+/* Контейнер: max-width + резиновая ширина */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* Две колонки: резиновые + перенос в одну колонку */
+.two-col{
+  display: flex;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.content{ flex: 1 1 60%; }
+.aside{ flex: 0 1 320px; }
+
+@media (max-width: 720px){
+  .two-col{ flex-direction: column; }
+  .aside{ flex-basis: auto; }
+}
+
+/* Сетка карточек: резиновая */
+.cards{
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}</code></pre>
+
+          <div class="callout callout--note small">
+            <strong>Примечание:</strong> шаблон CSS приведён как ориентир.
+            Разрешается использовать собственные значения, при условии
+            соблюдения требований «резиновости».
+          </div>
+        </section>
+
+        <section class="card" id="check">
+          <h2 class="card__title">7) Самопроверка</h2>
+          <ol>
+            <li>При ширине 360–480px нет горизонтального скролла.</li>
+            <li>
+              Контейнер имеет внутренние отступы и не «прилипает» к краям
+              экрана.
+            </li>
+            <li>
+              Двухколоночный блок переходит в одну колонку на узком экране.
+            </li>
+            <li>Сетка карточек перестраивается автоматически.</li>
+            <li>
+              Текст читаемый: базовый размер в rem, нормальный line-height.
+            </li>
+            <li>
+              Поля формы (в студенческом проекте) не выходят за границы
+              контейнера.
+            </li>
+          </ol>
+
+          <div class="callout callout--success small">
+            <strong>Рекомендация преподавателя:</strong> используйте DevTools →
+            режим «Responsive» и последовательно проверьте 360px, 390px, 768px,
+            1024px, 1440px.
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <p class="small">
+          © 2026. Дисциплина «HTML5 и CSS3». Практическая работа: Резиновая
+          вёрстка.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
